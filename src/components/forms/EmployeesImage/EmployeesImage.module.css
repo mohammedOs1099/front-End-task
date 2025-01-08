@@ -1,0 +1,21 @@
+.container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  outline: none;
+  transition: border 0.24s ease-in-out;
+  border: 2px rgba(170,175,179,1);
+  border-style: dashed;
+}
+.dropzone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+img {  
+    
+  width: 25%;
+  max-width: 300px;
+  object-fit: cover;
+}

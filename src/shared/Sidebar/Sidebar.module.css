@@ -1,0 +1,23 @@
+.container {
+  background-color: #025466;
+}
+.nav .navLink {
+  font-size: 0.9rem;
+
+  color: white;
+}
+.nav .active {
+  background-color: white;
+  color: #025466 !important;
+  border-radius: 3px;
+  padding: 0;
+  margin: 0;
+}
+.dropdown {
+  color: white;
+}
+@media screen and (max-width: 600px) {
+  .nav .navLink {
+    font-size: 0.8rem;
+  }
+}

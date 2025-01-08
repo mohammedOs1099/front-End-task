@@ -1,0 +1,63 @@
+.StepCircle {
+  width: 2rem;
+  height: 2rem;
+
+  transition: all 0.3s;
+  font-size: 1.25rem;
+  position: relative;
+}
+.StepCirclLine {
+  width: 2rem;
+  height: 2rem;
+
+  transition: all 0.3s;
+  font-size: 1.25rem;
+  position: relative;
+}
+
+.StepCircle::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  bottom: 50%;
+  right: -56%;
+  transform: translate(-50%, -50%);
+  width: 8rem;
+  border: 1.59px #cbcbcb;
+  border-style: dashed;
+}
+
+@media screen and (max-width: 992px) {
+  .StepCircle::after {
+    width: 4.5rem;
+    right: 2%;
+  }
+}
+@media screen and (max-width: 525px) {
+  .StepCircle::after {
+    width: 4rem;
+    right: 21%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .StepCircle::after {
+    width: 2.5rem;
+    right: 60%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .StepCircle::after {
+    width: 2.5rem;
+    right: 60%;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .StepCircle::after {
+    width: 2rem;
+    right: 65%;
+  }
+  .small {
+    font-size: 0.6rem;
+  }
+}

@@ -1,0 +1,92 @@
+#basic-navbar-nav .nav-link {
+  padding: 0;
+}
+#basic-navbar-nav .navbar-expand-md .navbar-nav .nav-link {
+  padding: 0;
+}
+
+#basic-navbar-nav .navbar-collapse {
+  width: auto;
+}
+#basic-navbar-nav .dropdown-menu {
+  position: absolute;
+}
+
+.row .btn-primary {
+  background-color: #026980 !important;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+.row .btn-primary:hover {
+  background-color: #024a61 !important;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+}
+
+/* patgination */
+
+.pagination {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  justify-content: center;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.pagination li {
+  display: inline-block;
+}
+
+.pagination a {
+  padding: 7px 12px;
+
+  margin: 0 2px;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  background-color: #f8f9fa;
+  color: #024a61;
+  text-decoration: none;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.pagination a:hover {
+  background-color: #024a61;
+  color: white;
+}
+
+.pagination .active a {
+  border-color: #024a61;
+}
+
+.pagination .disabled a {
+  color: #ccc;
+}
+.pagination .disabled a:hover {
+  background-color: white;
+}
+
+@media (max-width: 768px) {
+  .pagination {
+    font-size: 12px;
+    gap: 3px;
+  }
+  .pagination a {
+    padding: 6px 10px;
+  }
+}
+.dropdown-toggle::after {
+  border-top-color: white !important;
+}
