@@ -118,6 +118,9 @@ const Home = () => {
           handleConfirmDelete={handleConfirmDelete}
           showConfirm={showConfirm}
           handleCloseConfirm={handleCloseConfirm}
+          message={
+            "Are you sure you want to delete this employee?Are you sure you want to delete this employee?"
+          }
         />
       </Container>
     </>

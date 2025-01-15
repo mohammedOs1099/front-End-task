@@ -35,10 +35,16 @@ const Stepper = ({ setShow, empoyeeData, edit }) => {
       return value !== undefined && value !== null && value !== "";
     });
 
+
+    if (activeStep === 0) {
     if (isValid && touched && isAllFieldsFilled) {
       dispatch(setPersonalData(values));
       setActiveStep((prev) => Math.min(prev + 1, steps.length - 1));
+    } else {
+      alert("All fields are required!");
     }
+    }
+    
   };
   const handleBack = () => {
     setActiveStep((prev) => Math.max(prev - 1, 0));
