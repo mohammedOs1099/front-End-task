@@ -43,6 +43,8 @@ const Stepper = ({ setShow, empoyeeData, edit }) => {
     } else {
       alert("All fields are required!");
     }
+    } else if (activeStep === 1) {
+       setActiveStep((prev) => Math.min(prev + 1, steps.length - 1));
     }
     
   };
