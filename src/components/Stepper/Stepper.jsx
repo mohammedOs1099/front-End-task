@@ -21,6 +21,9 @@ const Stepper = ({ setShow, empoyeeData, edit }) => {
   let { personalData, employeeImage } = useSelector(
     (state) => state.CustomFormik
   );
+  const { employees } = useSelector((state) => state.employees);
+  console.log(employees);
+
   const dispatch = useDispatch();
   const initialValues = {
     employeename: "",
@@ -35,18 +38,16 @@ const Stepper = ({ setShow, empoyeeData, edit }) => {
       return value !== undefined && value !== null && value !== "";
     });
 
-
     if (activeStep === 0) {
-    if (isValid && touched && isAllFieldsFilled) {
-      dispatch(setPersonalData(values));
-      setActiveStep((prev) => Math.min(prev + 1, steps.length - 1));
-    } else {
-      alert("All fields are required!");
-    }
+      if (isValid && touched && isAllFieldsFilled) {
+        dispatch(setPersonalData(values));
+        setActiveStep((prev) => Math.min(prev + 1, steps.length - 1));
+      } else {
+        alert("All fields are required!");
+      }
     } else if (activeStep === 1) {
-       setActiveStep((prev) => Math.min(prev + 1, steps.length - 1));
+      setActiveStep((prev) => Math.min(prev + 1, steps.length - 1));
     }
-    
   };
   const handleBack = () => {
     setActiveStep((prev) => Math.max(prev - 1, 0));
@@ -57,12 +58,29 @@ const Stepper = ({ setShow, empoyeeData, edit }) => {
       initialValues={edit ? empoyeeData : initialValues}
       validationSchema={validationSchema}
       onSubmit={(values) => {
+         const existingEmployees = employees.find(
+           (employee) => employee.email === values.email
+         );
         if (edit) {
-          dispatch(editEmployee({ updatedData: values, id: empoyeeData?.id }));
-          setShow(false);
+          const existingEmployees = employees.find(
+            (employee) => employee.email === values.email && employee.id !== empoyeeData.id
+          );
+         
+          if (!existingEmployees) {
+            dispatch(
+              editEmployee({ updatedData: values, id: empoyeeData?.id })
+            );
+            setShow(false);
+          } else {
+            alert("Employee with the same email already exists!");
+          }
         } else {
-          dispatch(addEmployee({ ...personalData, employeeImage }));
-          setShow(false);
+          if (!existingEmployees) {
+            dispatch(addEmployee({ ...personalData, employeeImage }));
+            setShow(false);
+          } else {
+            alert("Employee with the same email already exists!");
+          }
         }
       }}
     >

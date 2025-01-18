@@ -11,7 +11,7 @@ const EditeEmployeesModal = ({empoyeeData}) => {
 
   return (
     <>
-      <Btn name={"edit employee "} onClick={() => setShow(true)} />
+      <Btn name={"Edit Employee "} onClick={() => setShow(true)} />
 
       <Modal
         onExit={() => dispatch(clearForm())}
